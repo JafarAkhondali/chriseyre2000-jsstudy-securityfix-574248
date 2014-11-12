@@ -5,9 +5,9 @@ var sys = require("sys"),
  fs = require("fs");
 
 http.createServer(function(request,response) {
-   var uri = uri.parse(request.url).pathname;
+   var uri = url.parse(request.url).pathname;
    var filename = path.join(process.cwd(), uri);
-   path.exists(filename, function(exists) {
+   fs.exists(filename, function(exists) {
       if(!exists) {
          response.writeHead(404, {"Content-Type":"text/plain"});
          response.end("404 Not Found\n");
@@ -20,7 +20,7 @@ http.createServer(function(request,response) {
             response.end(err + "\n");
             return;
          }
-         reponse.writeHead(200);
+         response.writeHead(200);
          response.end(file, "binary");
       });
    });
