@@ -1,7 +1,8 @@
 <html ng-app>
-<form ng-controller="StartUpController">
+<form ng-submit="requestFunding()" ng-controller="StartUpController">
 <input type="input" ng-model="funding.startingEstimate">
 Recommendation: {{funding.needed}}
+<button>Fund my Startup</button>
 </form>
 
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js'></script>
@@ -12,6 +13,9 @@ Recommendation: {{funding.needed}}
 	   $scope.funding.needed = $scope.funding.startingEstimate * 10;
 	};
         $scope.$watch('funding.startingEstimate',$scope.computeNeeded);
+        $scope.requestFunding = function() {
+		window.alert("Sorry, please get more customers first");
+	};
   }
 </script>
 </html>
