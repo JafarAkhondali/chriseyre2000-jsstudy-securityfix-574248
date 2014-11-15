@@ -3,6 +3,7 @@
 <input type="input" ng-model="funding.startingEstimate">
 Recommendation: {{funding.needed}}
 <button>Fund my Startup</button>
+<button ng-click="reset()">Reset</button>
 </form>
 
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js'></script>
@@ -16,6 +17,10 @@ Recommendation: {{funding.needed}}
         $scope.requestFunding = function() {
 		window.alert("Sorry, please get more customers first");
 	};
+        $scope.reset = function() {
+		$scope.funding.startingEstimate = 0;
+	}
+
   }
 </script>
 </html>
