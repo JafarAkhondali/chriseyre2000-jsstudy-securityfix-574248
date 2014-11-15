@@ -1,0 +1,12 @@
+<html ng-app>
+<form ng-controller="SomeController">
+<input type="checkbox" ng-model="youCheckedIt">
+</form>
+
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js'></script>
+<script>
+  function SomeController($scope) {
+	$scope.youCheckedIt = true;
+  }
+</script>
+</html>
