@@ -1,12 +1,17 @@
 <html ng-app>
-<form ng-controller="SomeController">
-<input type="checkbox" ng-model="youCheckedIt">
+<form ng-controller="StartUpController">
+<input type="input" ng-change="computeNeeded()" ng-model="funding.startingEstimate">
+Recommendation: {{funding.needed}}
 </form>
 
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js'></script>
 <script>
-  function SomeController($scope) {
-	$scope.youCheckedIt = true;
+  function StartUpController($scope) {
+	$scope.funding = {startingEstimate: 0};
+        $scope.computeNeeded = function() {
+	   $scope.funding.needed = $scope.funding.startingEstimate * 10;
+	};
+        //$scope.$watch('funding.startingEstimate',computeNeeded);
   }
 </script>
 </html>
