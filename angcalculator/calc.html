@@ -1,6 +1,6 @@
 <html ng-app>
 <form ng-controller="StartUpController">
-<input type="input" ng-change="computeNeeded()" ng-model="funding.startingEstimate">
+<input type="input" ng-model="funding.startingEstimate">
 Recommendation: {{funding.needed}}
 </form>
 
@@ -11,7 +11,7 @@ Recommendation: {{funding.needed}}
         $scope.computeNeeded = function() {
 	   $scope.funding.needed = $scope.funding.startingEstimate * 10;
 	};
-        //$scope.$watch('funding.startingEstimate',computeNeeded);
+        $scope.$watch('funding.startingEstimate',$scope.computeNeeded);
   }
 </script>
 </html>
