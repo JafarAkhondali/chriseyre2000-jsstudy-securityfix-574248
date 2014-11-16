@@ -1,0 +1,1 @@
+Copied from https://gist.github.com/odiseo42/6731571
